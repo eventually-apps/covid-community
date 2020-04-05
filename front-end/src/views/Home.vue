@@ -1,21 +1,17 @@
 <template>
   <div class="main">
-    <Login msg="Welcome to Your Vue.js App"/>
+    <Landing/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Login from '@/components/Login.vue'
+import Landing from '@/components/Landing.vue'
 
 export default {
-  name: 'Login',
+
   components: {
-    Login
+    Landing
   }
 }
 </script>
-
-<style lang="less" scoped>
-
-</style>

@@ -5,33 +5,24 @@
       color="primary"
       dark
     >
-      Covid Community
+      <v-btn to="/" text>
+        Covid Community
+      </v-btn>
       <v-spacer></v-spacer>
+      <v-btn to ="/About" text>About</v-btn>
+      <v-btn to="/Login" text>Login</v-btn>
     </v-app-bar>
-
     <v-content>
-      <Login/>
+      <router-view/>
     </v-content>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import Vuetify from 'vuetify/lib';
-import Login from './components/Login.vue';
-
-Vue.use(Vuetify, {
-  theme: {
-    dark: "true"
-  }
-})
 
 export default Vue.extend({
   name: 'App',
-
-  components: {
-    Login,
-  },
 
   data: () => ({
     //

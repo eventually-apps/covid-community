@@ -28,9 +28,10 @@
               type="password"
             />
           </v-form>
-            <v-btn color="primary">Login</v-btn>
-            <v-spacer />
-            <v-btn color="primary">Sign Up</v-btn>          
+            <v-row>
+              <v-btn color="primary">Login</v-btn>
+              <v-btn class="signUpBtn" color="primary" :to="{path: '/SignUp'}">Sign Up</v-btn>     
+            </v-row>
           </v-col>
         </v-row>
       </v-container>
@@ -48,3 +49,9 @@
     })
   })
 </script>
+
+<style lang="scss">
+.signUpBtn {
+  margin-left: 10px !important;
+}
+</style>
