@@ -28,5 +28,13 @@ namespace CovidCommunity.Api.Authorization.Users
 
             return user;
         }
+
+        public string Address { get; set; }
+
+        public string City { get; set; }
+
+        public string State { get; set; }
+
+        public string ZipCode { get; set; }
     }
 }

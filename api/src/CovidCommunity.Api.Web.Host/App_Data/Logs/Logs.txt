@@ -1088,3 +1088,330 @@ INFO  2020-04-05 16:43:39,352 [13   ] .Mvc.Infrastructure.ObjectResultExecutor -
 INFO  2020-04-05 16:43:39,355 [13   ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.UsersController.VerifyUser (CovidCommunity.Api.Web.Host) in 9294.1302ms
 INFO  2020-04-05 16:43:39,357 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.VerifyUser (CovidCommunity.Api.Web.Host)'
 INFO  2020-04-05 16:43:39,359 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 9328.2452ms 200 application/json; charset=utf-8
+DEBUG 2020-04-05 17:52:57,461 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-04-05 17:52:57,557 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-04-05 17:52:57,571 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.Web.Host.Startup.ApiWebHostModule, CovidCommunity.Api.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiWebCoreModule, CovidCommunity.Api.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,572 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiApplicationModule, CovidCommunity.Api.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiCoreModule, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,573 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,574 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,574 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.EntityFrameworkCore.ApiEntityFrameworkModule, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,574 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,574 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,575 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,575 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,575 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,575 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:57,578 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-04-05 17:52:57,639 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:52:57,639 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:52:57,639 [1    ] o.Configuration.LanguageManagementConfig - Converted Api (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:52:57,639 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:52:57,914 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: CovidCommunity.Api.EntityFrameworkCore.ApiDbContext, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:52:58,588 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-04-05 17:52:58,622 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-04-05 17:52:58,630 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-04-05 17:52:58,634 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Api
+DEBUG 2020-04-05 17:52:58,637 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-04-05 17:52:58,805 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-04-05 17:52:58,894 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[CovidCommunity.Api.MultiTenancy.Tenant, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CovidCommunity.Api.Authorization.Users.User, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-04-05 17:52:58,935 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 6 classes define auto mapping attributes
+DEBUG 2020-04-05 17:52:58,936 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-04-05 17:52:58,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.CreateUserDto
+DEBUG 2020-04-05 17:52:58,940 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.UserDto
+DEBUG 2020-04-05 17:52:58,941 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-04-05 17:52:58,941 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-04-05 17:52:58,941 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Roles.Dto.PermissionDto
+INFO  2020-04-05 17:53:00,722 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-04-05 17:53:00,912 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Smith\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-04-05 17:53:00,961 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-04-05 17:53:01,025 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:53:03,772 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CovidCommunity.Api.Web.Host.Controllers.HomeController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:53:04,736 [14   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-04-05 17:53:04,742 [14   ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host) in 965.3073ms
+INFO  2020-04-05 17:53:04,745 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:53:04,759 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3797.9685ms 302 
+INFO  2020-04-05 17:53:04,768 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-04-05 17:53:04,895 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 127.1226ms 200 text/html;charset=utf-8
+INFO  2020-04-05 17:53:05,079 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-04-05 17:53:05,083 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:53:05,091 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery"}. Executing controller action with signature Void SetCookie() on controller CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:53:05,108 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:53:05,111 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-04-05 17:53:05,125 [8    ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host) in 32.285ms
+INFO  2020-04-05 17:53:05,127 [8    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:53:05,132 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 50.1049ms 200 application/json; charset=utf-8
+INFO  2020-04-05 17:53:05,228 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 115.6137ms 200 application/json;charset=utf-8
+INFO  2020-04-05 17:54:27,115 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/api/Users/new application/json-patch+json 231
+INFO  2020-04-05 17:54:27,122 [10   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2020-04-05 17:54:27,124 [10   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2020-04-05 17:54:27,127 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:54:27,149 [10   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[CovidCommunity.Api.Web.Host.Models.User.NewUserResult] CreateUser(CovidCommunity.Api.Web.Host.Models.User.NewUserRequest) on controller CovidCommunity.Api.Web.Host.Controllers.UsersController (CovidCommunity.Api.Web.Host).
+WARN  2020-04-05 17:54:27,724 [10   ] Mvc.ExceptionHandling.AbpExceptionFilter - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError()
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate()
+   at Abp.Runtime.Validation.Interception.ValidationInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser(NewUserRequest model) in C:\Users\Smith\Documents\Projects\covid-community\api\src\CovidCommunity.Api.Web.Host\Controllers\UsersController.cs:line 33
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+WARN  2020-04-05 17:54:27,725 [10   ] Mvc.ExceptionHandling.AbpExceptionFilter - There are 1 validation errors:
+WARN  2020-04-05 17:54:27,725 [10   ] Mvc.ExceptionHandling.AbpExceptionFilter - The EmailAddress field is required. (EmailAddress)
+INFO  2020-04-05 17:54:27,957 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:54:27,962 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host) in 810.9601ms
+INFO  2020-04-05 17:54:27,963 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:54:27,966 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 850.3482ms 400 application/json; charset=utf-8
+DEBUG 2020-04-05 17:55:22,179 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-04-05 17:55:22,241 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-04-05 17:55:22,256 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.Web.Host.Startup.ApiWebHostModule, CovidCommunity.Api.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,258 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiWebCoreModule, CovidCommunity.Api.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,258 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiApplicationModule, CovidCommunity.Api.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,258 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiCoreModule, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,259 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,259 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,259 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,259 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,259 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.EntityFrameworkCore.ApiEntityFrameworkModule, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,260 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,260 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,260 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,260 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,260 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,260 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:22,262 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-04-05 17:55:22,319 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:55:22,319 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:55:22,320 [1    ] o.Configuration.LanguageManagementConfig - Converted Api (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:55:22,320 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:55:22,617 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: CovidCommunity.Api.EntityFrameworkCore.ApiDbContext, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:55:23,317 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-04-05 17:55:23,356 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-04-05 17:55:23,373 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-04-05 17:55:23,377 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Api
+DEBUG 2020-04-05 17:55:23,381 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-04-05 17:55:23,537 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-04-05 17:55:23,634 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[CovidCommunity.Api.MultiTenancy.Tenant, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CovidCommunity.Api.Authorization.Users.User, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-04-05 17:55:23,671 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 6 classes define auto mapping attributes
+DEBUG 2020-04-05 17:55:23,671 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-04-05 17:55:23,674 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.CreateUserDto
+DEBUG 2020-04-05 17:55:23,675 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.UserDto
+DEBUG 2020-04-05 17:55:23,675 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-04-05 17:55:23,675 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-04-05 17:55:23,675 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Roles.Dto.PermissionDto
+INFO  2020-04-05 17:55:25,539 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-04-05 17:55:25,743 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Smith\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-04-05 17:55:25,800 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-04-05 17:55:25,867 [15   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:55:28,542 [15   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CovidCommunity.Api.Web.Host.Controllers.HomeController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:55:29,485 [4    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-04-05 17:55:29,492 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host) in 944.6088ms
+INFO  2020-04-05 17:55:29,494 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:55:29,508 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3708.8ms 302 
+INFO  2020-04-05 17:55:29,517 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-04-05 17:55:29,637 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 119.548ms 200 text/html;charset=utf-8
+INFO  2020-04-05 17:55:30,928 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-04-05 17:55:30,934 [15   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:55:30,943 [15   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery"}. Executing controller action with signature Void SetCookie() on controller CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:55:30,976 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-04-05 17:55:31,001 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:55:31,022 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host) in 75.9695ms
+INFO  2020-04-05 17:55:31,024 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:55:31,026 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 98.1465ms 200 application/json; charset=utf-8
+INFO  2020-04-05 17:55:31,076 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 100.5169ms 200 application/json;charset=utf-8
+INFO  2020-04-05 17:55:40,426 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/api/Users/new application/json-patch+json 231
+INFO  2020-04-05 17:55:40,431 [13   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2020-04-05 17:55:40,433 [13   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2020-04-05 17:55:40,437 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:55:40,460 [13   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[CovidCommunity.Api.Web.Host.Models.User.NewUserResult] CreateUser(CovidCommunity.Api.Web.Host.Models.User.NewUserRequest) on controller CovidCommunity.Api.Web.Host.Controllers.UsersController (CovidCommunity.Api.Web.Host).
+WARN  2020-04-05 17:55:41,296 [4    ] Mvc.ExceptionHandling.AbpExceptionFilter - Current user did not login to the application!
+Abp.Authorization.AbpAuthorizationException: Current user did not login to the application!
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationHelper.CheckPermissionsAsync(MethodInfo methodInfo, Type type)
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type)
+   at Abp.Authorization.AuthorizationInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at Abp.Auditing.AuditingInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at Abp.Auditing.AuditingInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at Abp.Runtime.Validation.Interception.ValidationInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser(NewUserRequest model) in C:\Users\Smith\Documents\Projects\covid-community\api\src\CovidCommunity.Api.Web.Host\Controllers\UsersController.cs:line 33
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+INFO  2020-04-05 17:55:41,302 [4    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:55:41,306 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host) in 844.1012ms
+INFO  2020-04-05 17:55:41,308 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:55:41,310 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 884.2932ms 401 application/json; charset=utf-8
+DEBUG 2020-04-05 17:56:20,992 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-04-05 17:56:21,080 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-04-05 17:56:21,092 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.Web.Host.Startup.ApiWebHostModule, CovidCommunity.Api.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiWebCoreModule, CovidCommunity.Api.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiApplicationModule, CovidCommunity.Api.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiCoreModule, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,094 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,095 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,095 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,095 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.EntityFrameworkCore.ApiEntityFrameworkModule, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,095 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,095 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,096 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,096 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,096 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,096 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:21,098 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-04-05 17:56:21,154 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:56:21,154 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:56:21,154 [1    ] o.Configuration.LanguageManagementConfig - Converted Api (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:56:21,154 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:56:21,417 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: CovidCommunity.Api.EntityFrameworkCore.ApiDbContext, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:56:22,111 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-04-05 17:56:22,154 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-04-05 17:56:22,162 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-04-05 17:56:22,166 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Api
+DEBUG 2020-04-05 17:56:22,170 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-04-05 17:56:22,326 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-04-05 17:56:22,447 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[CovidCommunity.Api.MultiTenancy.Tenant, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CovidCommunity.Api.Authorization.Users.User, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-04-05 17:56:22,488 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 6 classes define auto mapping attributes
+DEBUG 2020-04-05 17:56:22,488 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-04-05 17:56:22,494 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.CreateUserDto
+DEBUG 2020-04-05 17:56:22,495 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.UserDto
+DEBUG 2020-04-05 17:56:22,495 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-04-05 17:56:22,495 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-04-05 17:56:22,495 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Roles.Dto.PermissionDto
+INFO  2020-04-05 17:56:24,283 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-04-05 17:56:24,490 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Smith\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-04-05 17:56:24,542 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-04-05 17:56:24,614 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:56:27,483 [9    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CovidCommunity.Api.Web.Host.Controllers.HomeController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:56:28,474 [12   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-04-05 17:56:28,482 [12   ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host) in 993.8588ms
+INFO  2020-04-05 17:56:28,484 [12   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:56:28,501 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3959.6407ms 302 
+INFO  2020-04-05 17:56:28,510 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-04-05 17:56:28,637 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 126.4205ms 200 text/html;charset=utf-8
+INFO  2020-04-05 17:56:29,934 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-04-05 17:56:29,942 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:56:29,953 [11   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery"}. Executing controller action with signature Void SetCookie() on controller CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:56:29,979 [4    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:56:29,987 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-04-05 17:56:29,998 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host) in 43.0378ms
+INFO  2020-04-05 17:56:30,000 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:56:30,002 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 68.6054ms 200 application/json; charset=utf-8
+INFO  2020-04-05 17:56:30,090 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 102.5728ms 200 application/json;charset=utf-8
+INFO  2020-04-05 17:56:33,095 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/api/Users/new application/json-patch+json 231
+INFO  2020-04-05 17:56:33,101 [13   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2020-04-05 17:56:33,103 [13   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2020-04-05 17:56:33,107 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:56:33,122 [13   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[CovidCommunity.Api.Web.Host.Models.User.NewUserResult] CreateUser(CovidCommunity.Api.Web.Host.Models.User.NewUserRequest) on controller CovidCommunity.Api.Web.Host.Controllers.UsersController (CovidCommunity.Api.Web.Host).
+ERROR 2020-04-05 17:56:34,531 [8    ] Mvc.ExceptionHandling.AbpExceptionFilter - Invalid parameter: To
+Twilio.Exceptions.ApiException: Invalid parameter: To
+   at Twilio.Clients.TwilioRestClient.ProcessResponse(Response response)
+   at Twilio.Clients.TwilioRestClient.RequestAsync(Request request)
+   at Twilio.Rest.Verify.V2.Service.VerificationResource.CreateAsync(CreateVerificationOptions options, ITwilioRestClient client)
+   at Twilio.Rest.Verify.V2.Service.VerificationResource.CreateAsync(String pathServiceSid, String to, String channel, String customMessage, String sendDigits, String locale, String customCode, String amount, String payee, Object rateLimits, Object channelConfiguration, String appHash, ITwilioRestClient client)
+   at CovidCommunity.Api.Twilio.TwilioVerificationService.StartVerification(String phonenumber, String channel) in C:\Users\Smith\Documents\Projects\covid-community\api\src\CovidCommunity.Api.Core\Twilio\TwilioVerificationService.cs:line 34
+   at CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser(NewUserRequest model) in C:\Users\Smith\Documents\Projects\covid-community\api\src\CovidCommunity.Api.Web.Host\Controllers\UsersController.cs:line 34
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+INFO  2020-04-05 17:56:34,773 [8    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:56:34,777 [8    ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host) in 1652.5033ms
+INFO  2020-04-05 17:56:34,778 [8    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:56:34,780 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1685.7587ms 500 application/json; charset=utf-8
+DEBUG 2020-04-05 17:57:44,053 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-04-05 17:57:44,105 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-04-05 17:57:44,116 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.Web.Host.Startup.ApiWebHostModule, CovidCommunity.Api.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,117 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiWebCoreModule, CovidCommunity.Api.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,117 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiApplicationModule, CovidCommunity.Api.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.ApiCoreModule, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: CovidCommunity.Api.EntityFrameworkCore.ApiEntityFrameworkModule, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:44,121 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-04-05 17:57:44,179 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:57:44,179 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:57:44,179 [1    ] o.Configuration.LanguageManagementConfig - Converted Api (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:57:44,179 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-05 17:57:44,433 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: CovidCommunity.Api.EntityFrameworkCore.ApiDbContext, CovidCommunity.Api.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-05 17:57:45,113 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-04-05 17:57:45,147 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-04-05 17:57:45,156 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-04-05 17:57:45,160 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Api
+DEBUG 2020-04-05 17:57:45,165 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-04-05 17:57:45,333 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-04-05 17:57:45,454 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[CovidCommunity.Api.MultiTenancy.Tenant, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[CovidCommunity.Api.Authorization.Users.User, CovidCommunity.Api.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-04-05 17:57:45,494 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 6 classes define auto mapping attributes
+DEBUG 2020-04-05 17:57:45,495 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-04-05 17:57:45,499 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.CreateUserDto
+DEBUG 2020-04-05 17:57:45,499 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Users.Dto.UserDto
+DEBUG 2020-04-05 17:57:45,499 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-04-05 17:57:45,499 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-04-05 17:57:45,499 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - CovidCommunity.Api.Roles.Dto.PermissionDto
+INFO  2020-04-05 17:57:47,365 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-04-05 17:57:47,581 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Smith\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-04-05 17:57:47,645 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-04-05 17:57:47,725 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:57:49,877 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/api/Users/new application/json-patch+json 231
+INFO  2020-04-05 17:57:49,897 [14   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2020-04-05 17:57:49,898 [14   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2020-04-05 17:57:49,909 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:57:50,643 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller CovidCommunity.Api.Web.Host.Controllers.HomeController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:57:50,653 [14   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "CreateUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[CovidCommunity.Api.Web.Host.Models.User.NewUserResult] CreateUser(CovidCommunity.Api.Web.Host.Models.User.NewUserRequest) on controller CovidCommunity.Api.Web.Host.Controllers.UsersController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:57:52,021 [11   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-04-05 17:57:52,029 [11   ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host) in 1379.593ms
+INFO  2020-04-05 17:57:52,031 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.HomeController.Index (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:57:52,046 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 4401.0976ms 302 
+INFO  2020-04-05 17:57:52,056 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-04-05 17:57:52,105 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 49.0439ms 200 text/html;charset=utf-8
+INFO  2020-04-05 17:57:52,946 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-04-05 17:57:52,952 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:57:52,981 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-04-05 17:57:53,091 [11   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery"}. Executing controller action with signature Void SetCookie() on controller CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:57:53,110 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:57:53,123 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host) in 30.1139ms
+INFO  2020-04-05 17:57:53,125 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.AntiForgeryController.SetCookie (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:57:53,128 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 181.2647ms 200 application/json; charset=utf-8
+INFO  2020-04-05 17:57:53,133 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 151.1838ms 200 application/json;charset=utf-8
+INFO  2020-04-05 17:57:53,142 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:57:53,152 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host) in 2496.9469ms
+INFO  2020-04-05 17:57:53,154 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.CreateUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:57:53,156 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3280.215ms 200 application/json; charset=utf-8
+INFO  2020-04-05 17:58:42,093 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/api/Users/verify application/json-patch+json 28
+INFO  2020-04-05 17:58:42,096 [7    ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2020-04-05 17:58:42,097 [7    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2020-04-05 17:58:42,104 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.VerifyUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:58:42,114 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "VerifyUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[CovidCommunity.Api.Web.Host.Models.User.VerifyUserResult] VerifyUser(CovidCommunity.Api.Web.Host.Models.User.VerifyUserRequest) on controller CovidCommunity.Api.Web.Host.Controllers.UsersController (CovidCommunity.Api.Web.Host).
+INFO  2020-04-05 17:58:45,028 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-05 17:58:45,031 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action CovidCommunity.Api.Web.Host.Controllers.UsersController.VerifyUser (CovidCommunity.Api.Web.Host) in 2914.8635ms
+INFO  2020-04-05 17:58:45,033 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'CovidCommunity.Api.Web.Host.Controllers.UsersController.VerifyUser (CovidCommunity.Api.Web.Host)'
+INFO  2020-04-05 17:58:45,035 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 2941.9563ms 200 application/json; charset=utf-8

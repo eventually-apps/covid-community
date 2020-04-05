@@ -1,5 +1,8 @@
-﻿using CovidCommunity.Api.Controllers;
+﻿using Abp.Application.Services.Dto;
+using Abp.UI;
+using CovidCommunity.Api.Controllers;
 using CovidCommunity.Api.Twilio;
+using CovidCommunity.Api.Users;
 using CovidCommunity.Api.Web.Host.Models.User;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -11,24 +14,33 @@ namespace CovidCommunity.Api.Web.Host.Controllers
     public class UsersController : ApiControllerBase
     {
         private readonly ITwilioVerificationService _twiioVerificationService;
+        private readonly IUserAppService _userAppService;
 
-        public UsersController(ITwilioVerificationService twiioVerificationService)
+        public UsersController(ITwilioVerificationService twiioVerificationService, IUserAppService userAppService)
         {
             _twiioVerificationService = twiioVerificationService;
+            _userAppService = userAppService;
         }
 
         [HttpPost("new")]
         public async Task<NewUserResult> CreateUser(NewUserRequest model)
         {
-            var response = await _twiioVerificationService.StartVerification(model.PhoneNumber, "sms");
+            if (!model.IsPasswordValid())
+            {
+                throw new UserFriendlyException("Passwords do not match");
+            }
 
-            return new NewUserResult() { Id = 1 };
+            var user = await _userAppService.CreateAsync(model.ConvertToDto());
+            await _twiioVerificationService.StartVerification(model.GetFullPhoneNumber(), "sms");
+
+            return new NewUserResult() { User = user };
         }
 
         [HttpPost("verify")]
         public async Task<VerifyUserResult> VerifyUser(VerifyUserRequest model)
         {
-            var result = await _twiioVerificationService.ConfirmVerification("+12147296420", model.Code);
+            var user = await _userAppService.GetAsync(new EntityDto<long>(model.UserId));
+            await _twiioVerificationService.ConfirmVerification(user.PhoneNumber, model.Code);
 
             return new VerifyUserResult { IsVerified = true };
         }
