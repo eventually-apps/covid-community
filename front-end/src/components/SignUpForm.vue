@@ -68,6 +68,14 @@
                     type="text"/>
             </v-col>
         </v-row>
+          <v-row justify="center">
+            <v-col cols="12" md="8" >
+                <v-text-field
+                    label="Password"
+                    name="Password"
+                    type="text"/>
+            </v-col>
+        </v-row>
         <v-row  
         align="center"
         justify="center">
