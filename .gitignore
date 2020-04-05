@@ -1,0 +1,12 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# IDEs and editors
+.vs/
+obj/
+bin/
+aspnet-core/src/CovidCommunity.Api.Web.Host/App_Data/Logs/
+aspnet-core/src/CovidCommunity.Api.Web.Mvc/App_Data/Logs/
+aspnet-core/src/CovidCommunity.Api.Migrator/Logs/Logs.txt
+
+# Seed Settings
+seedsettings.json
