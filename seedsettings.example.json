@@ -1,0 +1,19 @@
+{
+    "SeedSettings": {
+        "DefaultPassword": "Set To Your Default Password",
+        "AdminEmail": "Set To Your Default Admin Email",
+        "AdminUsername": "Set To Your Default Admin Username",
+        "AdminFirstName": "Set To Your Default Admin First Name",
+        "AdminSurname": "Set To Your Default Admin Surname"
+    },
+    "Authentication": {
+        "JwtBearer": {
+            "SecurityKey": "256 Bit Key To Sign JWT Using HmacSha256"
+        }
+    },
+    "Twilio": {
+        "AccountSid": "Set to your Twilio Account SID",
+        "AuthToken": "Set to your Twilio Auth Token",
+        "VerificationSid": "Set to your Verify Service SID"
+    }
+}
