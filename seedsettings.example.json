@@ -10,5 +10,10 @@
         "JwtBearer": {
             "SecurityKey": "256 Bit Key To Sign JWT Using HmacSha256"
         }
+    },
+    "Twilio": {
+        "AccountSid": "Set to your Twilio Account SID",
+        "AuthToken": "Set to your Twilio Auth Token",
+        "VerificationSid": "Set to your Verify Service SID"
     }
 }

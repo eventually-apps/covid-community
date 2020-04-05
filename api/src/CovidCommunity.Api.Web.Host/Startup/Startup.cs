@@ -112,7 +112,11 @@ namespace CovidCommunity.Api.Web.Host.Startup
 
             app.UseAbpRequestLocalization();
 
-          
+            var twilioSettings = _appConfiguration.GetSection("Twilio");
+            Twilio.TwilioConfiguration.AccountSid = twilioSettings["AccountSid"];
+            Twilio.TwilioConfiguration.AuthToken = twilioSettings["AuthToken"];
+            Twilio.TwilioConfiguration.VerificationSid = twilioSettings["VerificationSid"];
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<AbpCommonHub>("/signalr");
