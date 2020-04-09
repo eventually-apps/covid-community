@@ -1,9 +1,20 @@
-import { UserModel } from "../models/UserModel";
+import UserModel  from "../models/UserModel";
+import axios from "axios";
 
 export default class LoginService {
 
-    public CreateNewUser(user: UserModel): any {
-        return null;
+    public CreateNewUser(user: any): any {
+        let response: any;
+
+        axios.post("http://localhost:21021/api/Users/new", {
+            body: user
+        }).then(res => {
+            response = res;
+        }).catch(err => {
+            console.log(err);
+        });
+
+        return response;
     }
 
     public ValidateNewUser(): any {

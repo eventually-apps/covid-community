@@ -5,12 +5,16 @@
 </template>
 
 <script lang="ts">
-import Login from '@/components/LoginForm.vue'
+import { Component, Prop, Vue } from 'vue-property-decorator'
+import LoginForm from '@/components/LoginForm.vue'
 
-export default {
-
+@Component({
   components: {
-    Login
+    LoginForm
   }
+})
+
+export default class Login extends Vue {
+
 }
 </script>
