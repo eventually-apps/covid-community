@@ -8,8 +8,8 @@ export default class LoginService {
         });
     }
 
-    public ValidateNewUser(verifyCode: any): Promise<any> {
-        return axios.post("http://localhost:21021/api/Users/verify", verifyCode).then(res => {
+    public ValidateNewUser(verificationRequest: any): Promise<any> {
+        return axios.post("http://localhost:21021/api/Users/verify", verificationRequest).then(res => {
             return res.data.result.user;
         });
     }
