@@ -14,7 +14,9 @@ export default class LoginService {
         });
     }
 
-    public Login(userName: string, password: string): any {
-        return null;
+    public Login(authRequest: any): Promise<any> {
+        return axios.post("http://localhost:21021/api/Auth", authRequest).then(res => {
+            return res.data.result.user;
+        });
     }
 }

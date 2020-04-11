@@ -16,12 +16,14 @@
 
           <v-form>
             <v-text-field
+              v-model="authRequest.UserNameOrEmailAddress"
               label="Login"
               name="login"
               type="text"
             />
 
             <v-text-field
+              v-model="authRequest.Password"
               id="password"
               label="Password"
               name="password"
@@ -29,7 +31,7 @@
             />
           </v-form>
             <v-row>
-              <v-btn color="primary">Login</v-btn>
+              <v-btn type="submit" color="primary" @click="Login(authRequest)">Login</v-btn>
             </v-row>
             <v-row style="margin-top: 10px;">
               <v-btn class="signUpBtn" color="primary" :to="{path: '/SignUp'}">Sign Up</v-btn>     
@@ -53,12 +55,25 @@ const loginSerivce = new LoginService();
 })
 
 export default class Login extends Vue {
-  public Login(userName: string, password: string) {
+
+  data() {
+    return {
+      authRequest: {
+        UserNameOrEmailAddress: "",
+        Password: ""
+      }
+    }
+  }
+
+  public async Login(authRequest: any) {
     let response: any;
+
     try {
-      response = loginSerivce.Login(userName, password);
+      response = loginSerivce.Login(authRequest);
+      console.log("Response", response);
     } catch(error) {
       response = error.response;
+      console.log("ERROR", response);
     }
   }
 }
