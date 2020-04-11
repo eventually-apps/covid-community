@@ -189,7 +189,6 @@ export default class SignUpForm extends Vue {
             response = await loginService.CreateNewUser(user);  
             this.lodaingDialog = false;
             this.UserId = response.id;
-            console.log(this.UserId);
             this.dialogTitle = "Verify Account";
             this.dialogBody = "Please enter the verification code sent to your mobile phone:"
             this.userSuccess = true;
@@ -206,7 +205,7 @@ export default class SignUpForm extends Vue {
     public VerifyUser(verifyCode: any){
         let response: any;
         const request = {UserId: this.UserId, Code: verifyCode};
-        
+
         try {
             loginService.ValidateNewUser(request);
             this.showDialog = false;

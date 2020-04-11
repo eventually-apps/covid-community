@@ -42,6 +42,7 @@ export default class Login extends Vue {
 
   public async Login() {
     let response: any;
+
     try {
       response = await loginSerivce.Login(this.username, this.password);
       setToken(response.accessToken);
@@ -49,6 +50,7 @@ export default class Login extends Vue {
       this.$router.push("/User");
     } catch (error) {
       response = error.response;
+      console.log("ERROR", response);
     }
   }
 }
