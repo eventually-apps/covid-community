@@ -15,6 +15,18 @@ export default class LoginService {
     }
 
     public Login(userName: string, password: string): any {
-        return null;
+        const loginModel = {
+            userNameOrEmailAddress: userName,
+            password: password
+        };
+
+        return axios.post("http://localhost:21021/api/Auth", loginModel).then(response => {
+            return response.data.result;
+        });
+    }
+
+    public async GetUserConfig() {
+        const response = await axios.get("http://localhost:21021/api/Users/config");
+        return response.data.result;
     }
 }

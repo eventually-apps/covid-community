@@ -10,3 +10,4 @@ aspnet-core/src/CovidCommunity.Api.Migrator/Logs/Logs.txt
 
 # Seed Settings
 seedsettings.json
+api/src/CovidCommunity.Api.Web.Host/App_Data/Logs/Logs.txt

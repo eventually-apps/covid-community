@@ -1,6 +1,8 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.UI;
+using Abp.Web.Configuration;
 using CovidCommunity.Api.Controllers;
+using CovidCommunity.Api.Sessions;
 using CovidCommunity.Api.Twilio;
 using CovidCommunity.Api.Users;
 using CovidCommunity.Api.Web.Host.Models.User;
@@ -15,12 +17,16 @@ namespace CovidCommunity.Api.Web.Host.Controllers
     {
         private readonly ITwilioVerificationService _twiioVerificationService;
         private readonly IUserAppService _userAppService;
+        private readonly AbpUserConfigurationBuilder _userConfigBuilder;
+        private readonly ISessionAppService _sessionAppService;
 
-        public UsersController(ITwilioVerificationService twiioVerificationService, IUserAppService userAppService)
+        public UsersController(ITwilioVerificationService twiioVerificationService, IUserAppService userAppService, AbpUserConfigurationBuilder userConfigBuilder, ISessionAppService sessionAppService)
         {
             _twiioVerificationService = twiioVerificationService;
             _userAppService = userAppService;
-        }
+            _userConfigBuilder = userConfigBuilder;
+            _sessionAppService = sessionAppService;
+    }
 
         [HttpPost("new")]
         public async Task<NewUserResult> CreateUser(NewUserRequest model)
@@ -43,6 +49,15 @@ namespace CovidCommunity.Api.Web.Host.Controllers
             await _twiioVerificationService.ConfirmVerification(user.PhoneNumber, model.Code);
 
             return new VerifyUserResult { IsVerified = true };
+        }
+
+        [HttpGet("config")]
+        public async Task<ActionResult> GetUserConfig()
+        {
+            var userConfig = await _userConfigBuilder.GetAll();
+            var sessionInfo = await _sessionAppService.GetCurrentLoginInformations();
+
+            return Ok(new { userConfig, sessionInfo });
         }
     }
 }
