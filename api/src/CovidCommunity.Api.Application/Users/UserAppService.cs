@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
+using Abp.Authorization.Users;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
 using Abp.Extensions;
@@ -17,6 +18,7 @@ using CovidCommunity.Api.Authorization;
 using CovidCommunity.Api.Authorization.Accounts;
 using CovidCommunity.Api.Authorization.Roles;
 using CovidCommunity.Api.Authorization.Users;
+using CovidCommunity.Api.MultiTenancy;
 using CovidCommunity.Api.Roles.Dto;
 using CovidCommunity.Api.Users.Dto;
 using Microsoft.AspNetCore.Identity;
@@ -220,6 +222,17 @@ namespace CovidCommunity.Api.Users
             }
 
             return true;
+        }
+
+        public async Task<AbpLoginResult<Tenant, User>> VerifyUser(VerifyUserInput input)
+        {
+            var currentUser = await _userManager.GetUserByIdAsync(input.UserId);
+            currentUser.IsActive = true;
+            await CurrentUnitOfWork.SaveChangesAsync();
+
+            var loginResult = await _logInManager.CreateUserLoginResult(currentUser);
+
+            return loginResult;
         }
     }
 }

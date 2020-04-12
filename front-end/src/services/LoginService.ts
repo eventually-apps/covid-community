@@ -8,10 +8,9 @@ export default class LoginService {
         });
     }
 
-    public ValidateNewUser(verificationRequest: any): Promise<any> {
-        return axios.post("http://localhost:21021/api/Users/verify", verificationRequest).then(res => {
-            return res.data.result.user;
-        });
+    public async ValidateNewUser(verificationRequest: any): Promise<any> {
+        const res = await axios.post("http://localhost:21021/api/Users/verify", verificationRequest);
+        return res.data.result;
     }
 
     public Login(userName: string, password: string): any {

@@ -50,7 +50,7 @@ namespace CovidCommunity.Api.Web.Host.Models.User
                 ZipCode = ZipCode,
                 Password = Password,
                 PhoneNumber = GetFullPhoneNumber(),
-                IsActive = true
+                IsActive = false
             };
         }
     }

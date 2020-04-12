@@ -52,7 +52,8 @@ namespace CovidCommunity.Api.Controllers
             {
                 AccessToken = accessToken,
                 ExpireInSeconds = (int)_configuration.Expiration.TotalSeconds,
-                UserId = loginResult.User.Id
+                UserId = loginResult.User.Id,
+                IsActive = loginResult.User.IsActive
             };
         }
 

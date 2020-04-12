@@ -10,6 +10,7 @@ using Abp.Zero.Configuration;
 using CovidCommunity.Api.Authorization.Roles;
 using CovidCommunity.Api.Authorization.Users;
 using CovidCommunity.Api.MultiTenancy;
+using System.Threading.Tasks;
 
 namespace CovidCommunity.Api.Authorization
 {
@@ -40,6 +41,11 @@ namespace CovidCommunity.Api.Authorization
                   roleManager, 
                   claimsPrincipalFactory)
         {
+        }
+
+        public Task<AbpLoginResult<Tenant, User>> CreateUserLoginResult(User user, Tenant tenant = null)
+        {
+            return base.CreateLoginResultAsync(user, tenant);
         }
     }
 }

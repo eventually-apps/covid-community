@@ -3,5 +3,6 @@
     public class VerifyUserResult
     {
         public bool IsVerified { get; set; }
+        public string AccessToken { get; set; }
     }
 }

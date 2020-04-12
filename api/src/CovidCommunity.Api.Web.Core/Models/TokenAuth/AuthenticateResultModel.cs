@@ -7,5 +7,7 @@
         public int ExpireInSeconds { get; set; }
 
         public long UserId { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }
