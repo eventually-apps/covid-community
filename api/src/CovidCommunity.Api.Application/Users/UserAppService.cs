@@ -53,7 +53,7 @@ namespace CovidCommunity.Api.Users
             _logInManager = logInManager;
         }
 
-        public override async Task<UserDto> CreateAsync(CreateUserDto input)
+        public new async Task<AbpLoginResult<Tenant, User>> CreateAsync(CreateUserDto input)
         {
             CheckCreatePermission();
 
@@ -73,7 +73,9 @@ namespace CovidCommunity.Api.Users
 
             CurrentUnitOfWork.SaveChanges();
 
-            return MapToEntityDto(user);
+            var loginResult = await _logInManager.LoginAsync(user.UserName, input.Password, shouldLockout: false);
+
+            return loginResult;
         }
 
         public override async Task<UserDto> UpdateAsync(UserDto input)
@@ -233,6 +235,13 @@ namespace CovidCommunity.Api.Users
             var loginResult = await _logInManager.CreateUserLoginResult(currentUser);
 
             return loginResult;
+        }
+
+        public async Task<bool> IsUserUnique(string emailAddress)
+        {
+            var result = await _userManager.CheckDuplicateUsernameOrEmailAddressAsync(null, emailAddress, emailAddress);
+
+            return result.Succeeded;
         }
     }
 }

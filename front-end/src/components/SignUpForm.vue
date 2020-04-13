@@ -83,11 +83,7 @@
       </v-row>
     </v-container>
     <v-row align="center" justify="center">
-      <v-btn
-        v-on:click="CreateNewUser(user)"
-        @click="lodaingDialog = true"
-        form="signup-form"
-      >Create Account</v-btn>
+      <v-btn v-on:click="VerifyUser" @click="lodaingDialog = true" form="signup-form">Create Account</v-btn>
       <v-dialog v-model="showDialog" max-width="290">
         <v-card>
           <v-card-title class="headline">{{dialogTitle}}</v-card-title>
@@ -104,12 +100,7 @@
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn color="green darken-1" text @click="showDialog = false">Cancel</v-btn>
-            <v-btn
-              v-if="userSuccess"
-              color="green darken-1"
-              text
-              @click="VerifyUser(verifyCode)"
-            >Verify</v-btn>
+            <v-btn v-if="userSuccess" color="green darken-1" text @click="CreateNewUser">Verify</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -136,38 +127,30 @@ const loginService = new LoginService();
   components: {}
 })
 export default class SignUpForm extends Vue {
-  @Prop() public dialogTitle!: string;
-  @Prop() private UserId!: number;
-
+  public dialogTitle = "";
   public showDialog = false;
   public lodaingDialog = false;
   public userSuccess = false;
   public dialogBody = "";
+  public user = {
+    emailAddress: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    state: "",
+    zipCode: "",
+    password: "",
+    passwordConfirm: "",
+    phoneNumber: ""
+  };
+  verifyCode = "";
 
-  data() {
-    return {
-      user: {
-        emailAddress: "",
-        firstName: "",
-        lastName: "",
-        address: "",
-        city: "",
-        state: "",
-        zipCode: "",
-        password: "",
-        passwordConfirm: "",
-        phoneNumber: ""
-      },
-      verifyCode: ""
-    };
-  }
-
-  public async CreateNewUser(user: any) {
+  public async VerifyUser() {
     let response: any;
     try {
-      response = await loginService.CreateNewUser(user);
+      response = await loginService.RequestVerification(this.user);
       this.lodaingDialog = false;
-      this.UserId = response.id;
       this.dialogTitle = "Verify Account";
       this.dialogBody =
         "Please enter the verification code sent to your mobile phone:";
@@ -182,14 +165,14 @@ export default class SignUpForm extends Vue {
     }
   }
 
-  public async VerifyUser(verifyCode: any) {
+  public async CreateNewUser() {
     let response: any;
-    const request = { UserId: this.UserId, Code: verifyCode };
+    const request = { user: this.user, Code: this.verifyCode };
 
     try {
-      response = await loginService.ValidateNewUser(request);
+      response = await loginService.CreateNewUser(request);
       this.showDialog = false;
-      setToken(response.accessToken);
+      setToken(response.token);
       this.$router.push("/User");
     } catch (error) {
       console.log(error.response);
