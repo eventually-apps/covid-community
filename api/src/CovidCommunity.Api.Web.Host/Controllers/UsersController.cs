@@ -36,31 +36,34 @@ namespace CovidCommunity.Api.Web.Host.Controllers
             _configuration = configuration;
         }
 
-        [HttpPost("new")]
-        public async Task<NewUserResult> CreateUser(NewUserRequest model)
+        [HttpPost("request-verification")]
+        public async Task<NoContentResult> RequestVerification(NewUserRequest model)
         {
             if (!model.IsPasswordValid())
             {
                 throw new UserFriendlyException("Passwords do not match");
             }
 
-            var user = await _userAppService.CreateAsync(model.ConvertToDto());
+            var isUniqueUser = await _userAppService.IsUserUnique(model.EmailAddress);
+
+            if(!isUniqueUser)
+            {
+                throw new UserFriendlyException("There seems to be a user with this email already.");
+            }
+
             await _twiioVerificationService.StartVerification(model.GetFullPhoneNumber(), "sms");
 
-            return new NewUserResult() { User = user };
+            return NoContent();
         }
 
-        [HttpPost("verify")]
-        public async Task<VerifyUserResult> VerifyUser(VerifyUserRequest model)
+        [HttpPost("new")]
+        public async Task<NewUserResult> CreateUser(VerifyUserRequest model)
         {
-            var user = await _userAppService.GetAsync(new EntityDto<long>(model.UserId));
-            
-            await _twiioVerificationService.ConfirmVerification(user.PhoneNumber, model.Code);
-            var loginResult = await _userAppService.VerifyUser(new Users.Dto.VerifyUserInput(model.UserId));
+            await _twiioVerificationService.ConfirmVerification(model.User.GetFullPhoneNumber(), model.Code);
+            var userResult = await _userAppService.CreateAsync(model.User.ConvertToDto());
+            var accessToken = CreateAccessToken(CreateJwtClaims(userResult.Identity));
 
-            var accessToken = CreateAccessToken(CreateJwtClaims(loginResult.Identity));
-
-            return new VerifyUserResult { IsVerified = true, AccessToken = accessToken };
+            return new NewUserResult() { Token = accessToken };
         }
 
         [HttpGet("config")]

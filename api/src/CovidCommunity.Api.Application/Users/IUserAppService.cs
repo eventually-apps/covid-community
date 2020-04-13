@@ -11,6 +11,8 @@ namespace CovidCommunity.Api.Users
 {
     public interface IUserAppService : IAsyncCrudAppService<UserDto, long, PagedUserResultRequestDto, CreateUserDto, UserDto>
     {
+        new Task<AbpLoginResult<Tenant, User>> CreateAsync(CreateUserDto input);
+
         Task<ListResultDto<RoleDto>> GetRoles();
 
         Task ChangeLanguage(ChangeUserLanguageDto input);
@@ -18,5 +20,7 @@ namespace CovidCommunity.Api.Users
         Task<bool> ChangePassword(ChangePasswordDto input);
 
         Task<AbpLoginResult<Tenant, User>> VerifyUser(VerifyUserInput input);
+
+        Task<bool> IsUserUnique(string emailAddress);
     }
 }

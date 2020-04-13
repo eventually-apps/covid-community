@@ -1,24 +1,29 @@
 ﻿using CovidCommunity.Api.Users.Dto;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace CovidCommunity.Api.Web.Host.Models.User
 {
     public class NewUserRequest
     {
+        [Required]
         public string EmailAddress { get; set; }
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
+        [Required]
         public string Address { get; set; }
+        [Required]
         public string City { get; set; }
+        [Required]
         public string State { get; set; }
+        [Required]
         public string ZipCode { get; set; }
+        [Required]
         public string Password { get; set; }
+        [Required]
         public string PasswordConfirm { get; set; }
+        [Required]
         public string PhoneNumber { get; set; }
 
         public string GetFullPhoneNumber()
@@ -50,7 +55,7 @@ namespace CovidCommunity.Api.Web.Host.Models.User
                 ZipCode = ZipCode,
                 Password = Password,
                 PhoneNumber = GetFullPhoneNumber(),
-                IsActive = false
+                IsActive = true
             };
         }
     }

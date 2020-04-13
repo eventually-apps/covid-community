@@ -1,16 +1,14 @@
 import axios from "@/services/ajax";
 
 export default class LoginService {
+    public RequestVerification(user: any): Promise<never> {
+        return axios.post("http://localhost:21021/api/Users/request-verification", user);
+    }
 
     public CreateNewUser(user: any): Promise<any> {
         return axios.post("http://localhost:21021/api/Users/new", user).then(res => {
-            return res.data.result.user;
+            return res.data.result;
         });
-    }
-
-    public async ValidateNewUser(verificationRequest: any): Promise<any> {
-        const res = await axios.post("http://localhost:21021/api/Users/verify", verificationRequest);
-        return res.data.result;
     }
 
     public Login(userName: string, password: string): any {
