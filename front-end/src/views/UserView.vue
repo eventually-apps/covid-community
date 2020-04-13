@@ -1,93 +1,126 @@
 <template>
-     <v-navigation-drawer
-      v-model="drawer"
-      app>
-
+  <div>
+    <v-navigation-drawer app>
       <v-list dense>
-        <template v-for="item in items">
-          <v-row
-            v-if="item.heading"
-            :key="item.heading"
-            align="center"
-          >
-            <v-col cols="6">
-              <v-subheader v-if="item.heading">
-                {{ item.heading }}
-              </v-subheader>
-            </v-col>
-            <v-col
-              cols="6"
-              class="text-center">
-              
-              <a
-                href="#!"
-                class="body-2 black--text"
-              >EDIT</a>
-            </v-col>
-          </v-row>
-          <v-list-group
-            v-else-if="item.children"
-            :key="item.text"
-            v-model="item.model"
-            :prepend-icon="item.model ? item.icon : item['icon-alt']"
-            append-icon=""
-          >
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title>
-                  {{ item.text }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </template>
-            <v-list-item
-              v-for="(child, i) in item.children"
-              :key="i"
-              link
-            >
-              <v-list-item-action v-if="child.icon">
-                <v-icon>{{ child.icon }}</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                <v-list-item-title>
-                  {{ child.text }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </v-list-item>
-          </v-list-group>
-          <v-list-item
-            v-else
-            :key="item.text"
-            link
-          >
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>
-                {{ item.text }}
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </template>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-account-box</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="ShowComponent('account')">My Account</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-file</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="ShowComponent('request')">Requests</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-archive</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="ShowComponent('donate')">Donate</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-city</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="ShowComponent('community')">My Community</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link>
+          <v-list-item-action>
+            <v-icon>mdi-door-open</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title @click="Logout()">Logout</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <v-content>
+      <v-container v-if="showLanding" class="fill-height" fluid>
+        <v-row align="center" justify="center">
+          <v-col align="center">
+            Welcome Back, {{user.firstName}} {{user.lastName}}
+          </v-col>
+        </v-row>        
+      </v-container>
+      <Community v-if="showCommunity"/>
+      <Account v-if="showAccount"/>
+      <Request v-if="showRequests"/>
+      <Donate v-if="showDonate"/>
+    </v-content>
+  </div>
 </template>
 
-<script>
-  export default {
-    props: {
-      source: String,
-    },
-    data: () => ({
-      dialog: false,
-      drawer: null,
-      items: [
-        { icon: 'mdi-ambulance', text: 'Donate' },
-        { icon: 'mdi-content-paste', text: 'Requests' },
-        { icon: 'mdi-home-city', text: 'Your Community Center' },
-        { icon: 'mdi-badge-account-horizontal-outline', text: 'Account Settings' },
-        { icon: 'mdi-door-open', text: 'Logout' },
-      ],
-    }),
+<script lang="ts">
+import { Component, Prop, Vue } from "vue-property-decorator";
+import Community from "../components/Community.vue";
+import Account from "../components/MyAccount.vue";
+import Request from "../components/Request.vue";
+import Donate from "../components/Donate.vue";
+
+
+@Component({
+  components: {
+    Community,
+    Account,
+    Request,
+    Donate
   }
+})
+
+export default class UserView extends Vue {
+  
+  public showLanding = true;
+  public showRequests = false;
+  public showDonate = false;
+  public showCommunity = false;
+  public showAccount = false;
+
+
+  data() {
+    return {
+      user: {
+        firstName: "First Name Person",
+        lastName: "Last Name Person",
+      }
+    }
+  }
+
+  public ShowComponent(componentType: string) {
+    this.showLanding = false;
+    this.showCommunity = false;
+    this.showDonate = false;
+    this.showCommunity = false;
+    this.showAccount = false;
+    this.showRequests = false;
+
+    switch(componentType.toLowerCase()) {
+      case "community":
+        this.showCommunity = true;
+        break;
+      case "account":
+        this.showAccount = true;
+        break;
+      case "request":
+        this.showRequests = true;
+        break;
+      case "donate":
+        this.showDonate = true;
+        break;
+    }
+  }
+
+  public Logout() {
+    console.log("logout goes here");
+  }
+}
 </script>

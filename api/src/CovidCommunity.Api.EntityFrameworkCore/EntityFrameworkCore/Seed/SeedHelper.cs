@@ -9,6 +9,7 @@ using CovidCommunity.Api.EntityFrameworkCore.Seed.Host;
 using CovidCommunity.Api.EntityFrameworkCore.Seed.Tenants;
 using Microsoft.Extensions.Configuration;
 using CovidCommunity.Api.Configuration;
+using CovidCommunity.Api.EntityFrameworkCore.Seed.Item;
 
 namespace CovidCommunity.Api.EntityFrameworkCore.Seed
 {
@@ -32,6 +33,7 @@ namespace CovidCommunity.Api.EntityFrameworkCore.Seed
             // Default tenant seed (in host database).
             new DefaultTenantBuilder(context).Create();
             new TenantRoleAndUserBuilder(context, 1, _seedSettings).Create();
+            new DefaultItemBuilder(context).Create();
         }
 
         private static void WithDbContext<TDbContext>(IIocResolver iocResolver, Action<TDbContext> contextAction)

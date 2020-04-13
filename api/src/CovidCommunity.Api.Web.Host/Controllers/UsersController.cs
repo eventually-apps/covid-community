@@ -72,6 +72,8 @@ namespace CovidCommunity.Api.Web.Host.Controllers
             return Ok(new { userConfig, sessionInfo });
         }
 
+        
+
         private static List<Claim> CreateJwtClaims(ClaimsIdentity identity)
         {
             var claims = identity.Claims.ToList();
