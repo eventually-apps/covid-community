@@ -47,15 +47,13 @@
     <v-content>
       <v-container v-if="showLanding" class="fill-height" fluid>
         <v-row align="center" justify="center">
-          <v-col align="center">
-            Welcome Back, {{user.firstName}} {{user.lastName}}
-          </v-col>
-        </v-row>        
+          <v-col align="center">Welcome Back, {{user.firstName}} {{user.lastName}}</v-col>
+        </v-row>
       </v-container>
-      <Community v-if="showCommunity"/>
-      <Account v-if="showAccount"/>
-      <Request v-if="showRequests"/>
-      <Donate v-if="showDonate"/>
+      <Community v-if="showCommunity" />
+      <Account v-if="showAccount" />
+      <Request v-if="showRequests" />
+      <Donate v-if="showDonate" />
     </v-content>
   </div>
 </template>
@@ -66,7 +64,7 @@ import Community from "../components/Community.vue";
 import Account from "../components/MyAccount.vue";
 import Request from "../components/Request.vue";
 import Donate from "../components/Donate.vue";
-
+import { clearToken } from "../lib/appConfig";
 
 @Component({
   components: {
@@ -76,23 +74,20 @@ import Donate from "../components/Donate.vue";
     Donate
   }
 })
-
 export default class UserView extends Vue {
-  
   public showLanding = true;
   public showRequests = false;
   public showDonate = false;
   public showCommunity = false;
   public showAccount = false;
 
-
   data() {
     return {
       user: {
         firstName: "First Name Person",
-        lastName: "Last Name Person",
+        lastName: "Last Name Person"
       }
-    }
+    };
   }
 
   public ShowComponent(componentType: string) {
@@ -103,7 +98,7 @@ export default class UserView extends Vue {
     this.showAccount = false;
     this.showRequests = false;
 
-    switch(componentType.toLowerCase()) {
+    switch (componentType.toLowerCase()) {
       case "community":
         this.showCommunity = true;
         break;
@@ -120,7 +115,8 @@ export default class UserView extends Vue {
   }
 
   public Logout() {
-    console.log("logout goes here");
+    this.$router.push("/Login");
+    clearToken();
   }
 }
 </script>
