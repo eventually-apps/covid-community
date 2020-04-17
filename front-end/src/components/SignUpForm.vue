@@ -118,10 +118,10 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import LoginService from "../services/LoginService";
+import UserService from "../services/UserService";
 import { setToken } from "../lib/appConfig";
 
-const loginService = new LoginService();
+const userService = new UserService();
 
 @Component({
   components: {}
@@ -149,7 +149,7 @@ export default class SignUpForm extends Vue {
   public async VerifyUser() {
     let response: any;
     try {
-      response = await loginService.RequestVerification(this.user);
+      response = await userService.RequestVerification(this.user);
       this.lodaingDialog = false;
       this.dialogTitle = "Verify Account";
       this.dialogBody =
@@ -170,7 +170,7 @@ export default class SignUpForm extends Vue {
     const request = { user: this.user, Code: this.verifyCode };
 
     try {
-      response = await loginService.CreateNewUser(request);
+      response = await userService.CreateNewUser(request);
       this.showDialog = false;
       setToken(response.token);
       this.$router.push("/User");

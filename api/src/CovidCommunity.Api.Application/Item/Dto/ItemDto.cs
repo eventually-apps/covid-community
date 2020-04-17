@@ -6,5 +6,6 @@ namespace CovidCommunity.Api.Item.Dto
 {
     public class ItemDto
     {
+        public string ItemName { get; set; }
     }
 }

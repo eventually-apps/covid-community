@@ -28,10 +28,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import LoginService from "../services/LoginService";
+import UserService from "../services/UserService";
 import { setToken, setAppConfig } from "@/lib/appConfig";
 
-const loginSerivce = new LoginService();
+const userSerivce = new UserService();
 
 @Component({
   components: {}
@@ -44,10 +44,11 @@ export default class Login extends Vue {
     let response: any;
 
     try {
-      response = await loginSerivce.Login(this.username, this.password);
-      setToken(response.accessToken);
-      setAppConfig(await loginSerivce.GetUserConfig());
-      this.$router.push("/User");
+      response = await userSerivce.Login(this.username, this.password);
+      const userId = response.userId;
+      setAppConfig(await userSerivce.GetUserConfig());
+      //this.$router.push("/User");
+      this.$router.push({ name: "User", params: { userId }});
     } catch (error) {
       response = error.response;
       console.log("ERROR", response);

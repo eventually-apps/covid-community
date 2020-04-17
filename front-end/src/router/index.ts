@@ -30,7 +30,7 @@ const routes = [
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/User',
+    path: '/User/:userId',
     name: 'User',
     component: () => import('../views/UserView.vue'),
     meta: {

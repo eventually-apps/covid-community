@@ -6,32 +6,32 @@
           <v-list-item-action>
             <v-icon>mdi-account-box</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="ShowComponent('account')">My Account</v-list-item-title>
+          <v-list-item-content @click="ShowComponent('account')">
+            <v-list-item-title >My Account</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
             <v-icon>mdi-file</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="ShowComponent('request')">Requests</v-list-item-title>
+          <v-list-item-content @click="ShowComponent('request')">
+            <v-list-item-title >Requests</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
             <v-icon>mdi-archive</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="ShowComponent('donate')">Donate</v-list-item-title>
+          <v-list-item-content  @click="ShowComponent('donate')">
+            <v-list-item-title>Donate</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
             <v-icon>mdi-city</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title @click="ShowComponent('community')">My Community</v-list-item-title>
+          <v-list-item-content @click="ShowComponent('community')">
+            <v-list-item-title>My Community</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-list-item link>
@@ -52,21 +52,24 @@
           </v-col>
         </v-row>        
       </v-container>
-      <Community v-if="showCommunity"/>
-      <Account v-if="showAccount"/>
-      <Request v-if="showRequests"/>
-      <Donate v-if="showDonate"/>
+      <Community v-show="showCommunity"/>
+      <Account v-show="showAccount"/>
+      <Request v-show="showRequests"/>
+      <Donate v-show="showDonate"/>
     </v-content>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import UserService from "../services/UserService";
 import Community from "../components/Community.vue";
 import Account from "../components/MyAccount.vue";
 import Request from "../components/Request.vue";
 import Donate from "../components/Donate.vue";
+import UserModel from "../models/UserModel";
 
+const userService = new UserService();
 
 @Component({
   components: {
@@ -85,15 +88,20 @@ export default class UserView extends Vue {
   public showCommunity = false;
   public showAccount = false;
 
+  public user = { firstName: "Chad", lastName: "Not Smith"};
 
-  data() {
-    return {
-      user: {
-        firstName: "First Name Person",
-        lastName: "Last Name Person",
-      }
-    }
+
+  created(){
+    this.GetUserDetails(+this.$route.params.userId).then(x => {
+      console.log("User Details", x);
+      this.user.firstName = x.name;
+      this.user.lastName = x.surname;
+    });
   }
+
+  //  mounted(){
+  //   console.log("I AM THE MOUNTED");
+  // }
 
   public ShowComponent(componentType: string) {
     this.showLanding = false;
@@ -121,6 +129,10 @@ export default class UserView extends Vue {
 
   public Logout() {
     console.log("logout goes here");
+  }
+
+  private GetUserDetails(id: number): any {
+    return userService.GetUser(id);
   }
 }
 </script>

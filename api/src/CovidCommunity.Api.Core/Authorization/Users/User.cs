@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Abp.Authorization.Users;
 using Abp.Extensions;
+using CovidCommunity.Api.Domains;
 
 namespace CovidCommunity.Api.Authorization.Users
 {
@@ -36,5 +37,12 @@ namespace CovidCommunity.Api.Authorization.Users
         public string State { get; set; }
 
         public string ZipCode { get; set; }
+
+        public List<Location> Locations { get; set; } 
+
+        public Location UserLocation { get; set; }
+        public int? UserLocationId { get; set; }
+
+        public List<RequestOrder> RequestOrders { get; set; }
     }
 }

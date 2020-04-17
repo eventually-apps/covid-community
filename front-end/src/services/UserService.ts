@@ -1,6 +1,6 @@
 import axios from "@/services/ajax";
 
-export default class LoginService {
+export default class UserService {
     public RequestVerification(user: any): Promise<never> {
         return axios.post("http://localhost:21021/api/Users/request-verification", user);
     }
@@ -19,6 +19,12 @@ export default class LoginService {
 
         return axios.post("http://localhost:21021/api/Auth", loginModel).then(response => {
             return response.data.result;
+        });
+    }
+
+    public GetUser(id: number): any {
+        return axios.get(`http://localhost:21021/api/Users/${id}`).then(res => {
+            return res.data.result;
         });
     }
 

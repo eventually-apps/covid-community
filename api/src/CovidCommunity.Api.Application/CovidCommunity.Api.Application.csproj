@@ -13,4 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CovidCommunity.Api.Core\CovidCommunity.Api.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Location\" />
+  </ItemGroup>
 </Project>

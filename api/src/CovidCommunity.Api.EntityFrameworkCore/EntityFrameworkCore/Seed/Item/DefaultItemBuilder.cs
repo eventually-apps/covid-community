@@ -22,11 +22,15 @@ namespace CovidCommunity.Api.EntityFrameworkCore.Seed.Item
 
         public void CreateDefaultItem(ApiDbContext context)
         {
-            context.Items.Add(new Domains.Item { ItemName = "Toilet Paper"});
-            context.Items.Add(new Domains.Item { ItemName = "Hand Sanitizer"});
-            context.Items.Add(new Domains.Item { ItemName = "Canned Food"});
-            context.Items.Add(new Domains.Item { ItemName = "Gloves"});
-            context.Items.Add(new Domains.Item { ItemName = "Face Mask"});
+            if (!context.Items.Any())
+            {
+                context.Items.Add(new Domains.Item { ItemName = "Toilet Paper" });
+                context.Items.Add(new Domains.Item { ItemName = "Hand Sanitizer" });
+                context.Items.Add(new Domains.Item { ItemName = "Canned Food" });
+                context.Items.Add(new Domains.Item { ItemName = "Gloves" });
+                context.Items.Add(new Domains.Item { ItemName = "Face Mask" });
+                context.SaveChanges();
+            }
         }
     }
 }

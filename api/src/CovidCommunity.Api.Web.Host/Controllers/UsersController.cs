@@ -14,6 +14,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using CovidCommunity.Api.Users.Dto;
 
 namespace CovidCommunity.Api.Web.Host.Controllers
 {
@@ -75,7 +76,12 @@ namespace CovidCommunity.Api.Web.Host.Controllers
             return Ok(new { userConfig, sessionInfo });
         }
 
-        
+        [HttpGet("{id}")]
+        public async Task<UserDto> GetUser(long id)
+        {
+            var user = await _userAppService.GetAsync(new EntityDto<long>(id));
+            return user;
+        }
 
         private static List<Claim> CreateJwtClaims(ClaimsIdentity identity)
         {

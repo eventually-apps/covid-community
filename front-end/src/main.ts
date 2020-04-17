@@ -3,14 +3,14 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
-import LoginService from "@/services/LoginService"
+import UserService from "@/services/UserService"
 import { setAppConfig } from "@/lib/appConfig";
 
-const loginService = new LoginService();
+const userService = new UserService();
 
 Vue.config.productionTip = false
 
-loginService.GetUserConfig().then(configData => {
+userService.GetUserConfig().then(configData => {
   setAppConfig(configData);
   new Vue({
     router,

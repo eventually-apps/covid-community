@@ -3,6 +3,7 @@ using Abp.Zero.EntityFrameworkCore;
 using CovidCommunity.Api.Authorization.Roles;
 using CovidCommunity.Api.Authorization.Users;
 using CovidCommunity.Api.Domains;
+using CovidCommunity.Api.EntityFrameworkCore.Configurations;
 using CovidCommunity.Api.MultiTenancy;
 
 namespace CovidCommunity.Api.EntityFrameworkCore
@@ -11,6 +12,10 @@ namespace CovidCommunity.Api.EntityFrameworkCore
     {
         /* Define a DbSet for each entity of the application */
         public DbSet<Item> Items { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<RequestOrder> RequestOrders { get; set; }
+        public DbSet<Request> Requests { get; set; }
+        public DbSet<InventoryByLocation> InventoryByLocations { get; set; }
         
         public ApiDbContext(DbContextOptions<ApiDbContext> options)
             : base(options)
@@ -22,6 +27,9 @@ namespace CovidCommunity.Api.EntityFrameworkCore
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ChangeAbpTablePrefix<Tenant, Role, User>("");
+            modelBuilder.ApplyConfiguration(new LocationConfiguration());
+            modelBuilder.ApplyConfiguration(new RequestOrderConfiguration());
+            modelBuilder.ApplyConfiguration(new InventoryByLocationConfiguration());
         }
     }
 }

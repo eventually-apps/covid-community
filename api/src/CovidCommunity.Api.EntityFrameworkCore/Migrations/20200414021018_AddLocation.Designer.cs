@@ -4,14 +4,16 @@ using CovidCommunity.Api.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CovidCommunity.Api.Migrations
 {
     [DbContext(typeof(ApiDbContext))]
-    partial class ApiDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200414021018_AddLocation")]
+    partial class AddLocation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1531,34 +1533,6 @@ namespace CovidCommunity.Api.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CovidCommunity.Api.Domains.InventoryByLocation", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("ItemByLocationQuantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ItemId");
-
-                    b.HasIndex("LocationId");
-
-                    b.ToTable("InventoryByLocations");
-                });
-
             modelBuilder.Entity("CovidCommunity.Api.Domains.Item", b =>
                 {
                     b.Property<int>("Id")
@@ -1607,74 +1581,6 @@ namespace CovidCommunity.Api.Migrations
                     b.HasIndex("LocationOwnerId");
 
                     b.ToTable("Locations");
-                });
-
-            modelBuilder.Entity("CovidCommunity.Api.Domains.Request", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("FulfilledDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("RequestOrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RequestedAmount")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("RequestedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("RequestedItemId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RequestOrderId");
-
-                    b.HasIndex("RequestedItemId");
-
-                    b.ToTable("Requests");
-                });
-
-            modelBuilder.Entity("CovidCommunity.Api.Domains.RequestOrder", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FulfillmentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("OrderForLocationId")
-                        .HasColumnType("int");
-
-                    b.Property<long>("OrderRequestedByUserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderForLocationId");
-
-                    b.HasIndex("OrderRequestedByUserId");
-
-                    b.ToTable("RequestOrders");
                 });
 
             modelBuilder.Entity("CovidCommunity.Api.MultiTenancy.Tenant", b =>
@@ -1941,57 +1847,12 @@ namespace CovidCommunity.Api.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
-            modelBuilder.Entity("CovidCommunity.Api.Domains.InventoryByLocation", b =>
-                {
-                    b.HasOne("CovidCommunity.Api.Domains.Item", "Item")
-                        .WithMany("InventoryByLocations")
-                        .HasForeignKey("ItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CovidCommunity.Api.Domains.Location", "Location")
-                        .WithMany("InventoryByLocations")
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("CovidCommunity.Api.Domains.Location", b =>
                 {
                     b.HasOne("CovidCommunity.Api.Authorization.Users.User", "LocationOwner")
                         .WithMany("Locations")
                         .HasForeignKey("LocationOwnerId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CovidCommunity.Api.Domains.Request", b =>
-                {
-                    b.HasOne("CovidCommunity.Api.Domains.RequestOrder", "RequestOrder")
-                        .WithMany("Requests")
-                        .HasForeignKey("RequestOrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CovidCommunity.Api.Domains.Item", "RequestedItem")
-                        .WithMany()
-                        .HasForeignKey("RequestedItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("CovidCommunity.Api.Domains.RequestOrder", b =>
-                {
-                    b.HasOne("CovidCommunity.Api.Domains.Location", "OrderForLocation")
-                        .WithMany()
-                        .HasForeignKey("OrderForLocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CovidCommunity.Api.Authorization.Users.User", "OrderRequestedByUser")
-                        .WithMany("RequestOrders")
-                        .HasForeignKey("OrderRequestedByUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
