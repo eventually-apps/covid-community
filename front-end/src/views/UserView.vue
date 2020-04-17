@@ -47,10 +47,8 @@
     <v-content>
       <v-container v-if="showLanding" class="fill-height" fluid>
         <v-row align="center" justify="center">
-          <v-col align="center">
-            Welcome Back, {{user.firstName}} {{user.lastName}}
-          </v-col>
-        </v-row>        
+          <v-col align="center">Welcome Back, {{user.firstName}} {{user.lastName}}</v-col>
+        </v-row>
       </v-container>
       <Community v-show="showCommunity"/>
       <Account v-show="showAccount"/>
@@ -70,6 +68,7 @@ import Donate from "../components/Donate.vue";
 import UserModel from "../models/UserModel";
 
 const userService = new UserService();
+import { clearToken } from "../lib/appConfig";
 
 @Component({
   components: {
@@ -79,9 +78,7 @@ const userService = new UserService();
     Donate
   }
 })
-
 export default class UserView extends Vue {
-  
   public showLanding = true;
   public showRequests = false;
   public showDonate = false;
@@ -111,7 +108,7 @@ export default class UserView extends Vue {
     this.showAccount = false;
     this.showRequests = false;
 
-    switch(componentType.toLowerCase()) {
+    switch (componentType.toLowerCase()) {
       case "community":
         this.showCommunity = true;
         break;
@@ -128,7 +125,8 @@ export default class UserView extends Vue {
   }
 
   public Logout() {
-    console.log("logout goes here");
+    this.$router.push("/Login");
+    clearToken();
   }
 
   private GetUserDetails(id: number): any {
