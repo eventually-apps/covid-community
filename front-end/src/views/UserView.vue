@@ -61,13 +61,17 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import UserService from "../services/UserService";
+import RequestService from "../services/RequestService";
 import Community from "../components/Community.vue";
 import Account from "../components/MyAccount.vue";
 import Request from "../components/Request.vue";
 import Donate from "../components/Donate.vue";
 import UserModel from "../models/UserModel";
+import RequestOrderModel from "../models/RequestOrder";
 
 const userService = new UserService();
+const requestService = new RequestService();
+
 import { clearToken } from "../lib/appConfig";
 
 @Component({
