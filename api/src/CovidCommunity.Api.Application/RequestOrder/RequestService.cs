@@ -60,9 +60,10 @@ namespace CovidCommunity.Api.requestOrder
         public RequestOrderDto GetRequestOrdersByUser(long userId)
         {
             var requestOrder = _requestOrderRepository.GetAll()?.FirstOrDefault(x => x.OrderRequestedByUserId == userId && x.IsActive) ?? new Domains.RequestOrder();
+            var requests = _requestRepository.GetAll().Where(x => x.RequestOrderId == requestOrder.Id && x.IsActive).ToList();
             var requestDtoList = new List<RequestDto>(); 
 
-            foreach (var item in requestOrder.Requests)
+            foreach (var item in requests)
             {
                 requestDtoList.Add(new RequestDto
                 {
@@ -122,15 +123,32 @@ namespace CovidCommunity.Api.requestOrder
             }
         }
 
+        public void CreateRequest(int requestOrderId, RequestDto request)
+        {
+            _requestRepository.Insert(new Request
+            {
+                RequestOrderId = requestOrderId,
+                RequestedDate = request.RequestedDate,
+                RequestedAmount = request.RequestedAmount,
+                RequestedItemId = request.RequestedItemId,
+                IsActive = request.IsActive
+            });
+        }
+
         public void CancelRequest(int requestOrderId, int requestId)
         {
-            var requestToCancel = _requestOrderRepository.GetAll().First(x => x.Id == requestOrderId).Requests.FirstOrDefault(x => x.Id == requestId);
+            var requestToCancel = _requestRepository.GetAll().First(x => x.RequestOrderId == requestOrderId && x.Id == requestId);
 
-            if (requestToCancel != null && requestToCancel.IsActive)
-            {
-                requestToCancel.IsActive = false;
-                _requestRepository.Update(requestToCancel);
-            }
+            requestToCancel.IsActive = false;
+            _requestRepository.Update(requestToCancel);
+        }
+
+        public void FulfillRequest(int requestOrderId, int requestId)
+        {
+            var request = _requestRepository.GetAll().First(x => x.Id == requestId && x.RequestOrderId == requestOrderId);
+            request.FulfilledDate = DateTime.Now;
+            request.IsActive = false;
+            _requestRepository.Update(request);
         }
 
         public void CompleteRequestOrder(int requestOrderId)

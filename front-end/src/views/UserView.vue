@@ -67,7 +67,6 @@ import Account from "../components/MyAccount.vue";
 import Request from "../components/Request.vue";
 import Donate from "../components/Donate.vue";
 import UserModel from "../models/UserModel";
-import RequestOrderModel from "../models/RequestOrder";
 
 const userService = new UserService();
 const requestService = new RequestService();
@@ -82,6 +81,7 @@ import { clearToken } from "../lib/appConfig";
     Donate
   }
 })
+
 export default class UserView extends Vue {
   public showLanding = true;
   public showRequests = false;
@@ -97,6 +97,10 @@ export default class UserView extends Vue {
       console.log("User Details", x);
       this.user.firstName = x.name;
       this.user.lastName = x.surname;
+    });
+
+    this.GetRequestOrderByUser(+this.$route.params.userId).then(res => {
+      console.log("Request Order", res);
     });
   }
 
@@ -135,6 +139,10 @@ export default class UserView extends Vue {
 
   private GetUserDetails(id: number): any {
     return userService.GetUser(id);
+  }
+
+  private GetRequestOrderByUser(userId: any): any {
+    return requestService.GetRequestOrderByUser(userId);
   }
 }
 </script>

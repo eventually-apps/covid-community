@@ -26,6 +26,12 @@ namespace CovidCommunity.Api.Web.Host.Controllers
             _requestService.CreateNewRequestOrder(requestOrder.ConvertToDto());
         }
 
+        [HttpPost("createRequest")]
+        public void CreateNewRequest(int requestOrderId, NewRequestDto newRequest)
+        {
+            _requestService.CreateRequest(requestOrderId, newRequest.ConvertToDto());
+        }
+
         [HttpGet("getRequestOrder")]
         public RequestOrderDto GetRequestOrderByUser(long userId)
         {
@@ -36,6 +42,12 @@ namespace CovidCommunity.Api.Web.Host.Controllers
         public void CancelRequest(int requestOrderId, int requestId)
         {
             _requestService.CancelRequest(requestOrderId, requestId);
+        }
+
+        [HttpPost("fulfillRequest")]
+        public void FulfillRequest(int requestOrderId, int requestId)
+        {
+            _requestService.FulfillRequest(requestOrderId, requestId);
         }
     }
 }

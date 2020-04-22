@@ -11,6 +11,8 @@ namespace CovidCommunity.Api.RequestOrder
         List<RequestOrderDto> GetRequestOrdersByLocation(int locationId);
         RequestOrderDto GetRequestOrdersByUser(long userId);
         void CreateNewRequestOrder(RequestOrderDto requestOrder);
+        void CreateRequest(int requestOrderId ,RequestDto request);
         void CancelRequest(int requestOrderId, int requestId);
+        void FulfillRequest(int requestOrderId, int requestId);
     }
 }
