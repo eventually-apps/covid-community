@@ -2,7 +2,7 @@ import axios from "@/services/ajax";
 
 export default class RequestService {
     public GetRequestOrderByUser(userId: number): any {
-        return axios.get("http://localhost:21021/api/RequestOrder/getRequestOrder/").then(response => {
+        return axios.get(`http://localhost:21021/api/RequestOrder/getRequestOrder?userId=${userId}`).then(response => {
             return response;
         });
     }

@@ -47,12 +47,12 @@
     <v-content>
       <v-container v-if="showLanding" class="fill-height" fluid>
         <v-row align="center" justify="center">
-          <v-col align="center">Welcome Back, {{user.firstName}} {{user.lastName}}</v-col>
+          <v-col align="center"><h1>Welcome Back, {{user.firstName}} {{user.lastName}}</h1></v-col>
         </v-row>
       </v-container>
       <Community v-show="showCommunity"/>
       <Account v-show="showAccount"/>
-      <Request v-show="showRequests"/>
+      <Request v-show="showRequests" v-model="order"/>
       <Donate v-show="showDonate"/>
     </v-content>
   </div>
@@ -67,11 +67,16 @@ import Account from "../components/MyAccount.vue";
 import Request from "../components/Request.vue";
 import Donate from "../components/Donate.vue";
 import UserModel from "../models/UserModel";
+import { RequestOrderModel } from "../models/RequestOrderModel";
+import { IRequestModel } from "../models/RequestModel";
+import LocationService from "../services/LocationService";
 
 const userService = new UserService();
 const requestService = new RequestService();
+const locationService = new LocationService();
 
 import { clearToken } from "../lib/appConfig";
+
 
 @Component({
   components: {
@@ -90,23 +95,35 @@ export default class UserView extends Vue {
   public showAccount = false;
 
   public user = { firstName: "Chad", lastName: "Not Smith"};
-
+  public order = { id: 0, requestedUser: 0, locationId: 0, requests: [] };
+  public requests: IRequestModel[] = [];
+  public location: any;
 
   created(){
     this.GetUserDetails(+this.$route.params.userId).then(x => {
-      console.log("User Details", x);
       this.user.firstName = x.name;
       this.user.lastName = x.surname;
     });
 
     this.GetRequestOrderByUser(+this.$route.params.userId).then(res => {
-      console.log("Request Order", res);
-    });
-  }
+      res.data.result.requests.forEach(element => {
+        this.requests.push(element);
+      });
 
-  //  mounted(){
-  //   console.log("I AM THE MOUNTED");
-  // }
+      this.order.id = res.data.result.id;
+      this.order.requestedUser = res.data.result.orderRequestedByUserId;
+      this.order.locationId =  res.data.result.orderForLocationId;
+      this.order.requests = this.requests;    
+    });
+
+    console.log("Request Order", this.order);
+
+    this.GetLocation(4).then(res => {
+      this.location = res.data.result;
+      console.log("Location", this.location );
+    });
+
+  }
 
   public ShowComponent(componentType: string) {
     this.showLanding = false;
@@ -143,6 +160,10 @@ export default class UserView extends Vue {
 
   private GetRequestOrderByUser(userId: any): any {
     return requestService.GetRequestOrderByUser(userId);
+  }
+
+  private GetLocation(locationId: any): any {
+    return locationService.GetLocation(locationId);
   }
 }
 </script>

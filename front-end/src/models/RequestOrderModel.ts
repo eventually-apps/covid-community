@@ -1,13 +1,6 @@
-import request from "../models/RequestModel";
+export class RequestOrderModel {
 
-export default class RequestOrderModel {
-    OrderRequestedByUserId: number;
-    OrderForLocationId: number;
-    requests: request[];
-
-    constructor(OrderRequestedByUserId: number, OrderForLocationId: number, requests: request[]) {
-        this.OrderRequestedByUserId = OrderRequestedByUserId;
-        this.OrderForLocationId = OrderForLocationId;
-        this.requests = requests;
+    constructor(public RequestOrderId: number, public OrderRequestedByUserId: number,
+        public OrderForLocationId: number, public requests: any[]) {
     }
 }

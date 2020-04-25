@@ -40,18 +40,20 @@ export default class Login extends Vue {
   username = "";
   password = "";
 
-  public async Login() {
+  public async Login(){
     let response: any;
-
+    
     try {
+      console.log("chad needs a haircut");
       response = await userSerivce.Login(this.username, this.password);
       const userId = response.userId;
+      setToken(response.accessToken);
       setAppConfig(await userSerivce.GetUserConfig());
       //this.$router.push("/User");
       this.$router.push({ name: "User", params: { userId }});
     } catch (error) {
       response = error.response;
-      console.log("ERROR", response);
+      console.log("ERROR", error);
     }
   }
 }

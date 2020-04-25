@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
-using CovidCommunity.Api.Authorization.Users;
-using CovidCommunity.Api.Domains;
 
 namespace CovidCommunity.Api.RequestOrder.Dto
 {
