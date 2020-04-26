@@ -60,7 +60,7 @@ namespace CovidCommunity.Api.requestOrder
         public RequestOrderDto GetRequestOrdersByUser(long userId)
         {
             var requestOrder = _requestOrderRepository.GetAll()?.FirstOrDefault(x => x.OrderRequestedByUserId == userId && x.IsActive) ?? new Domains.RequestOrder();
-            var requests = _requestRepository.GetAll().Where(x => x.RequestOrderId == requestOrder.Id && x.IsActive).ToList();
+            var requests = _requestRepository.GetAll().Where(x => x.RequestOrderId == requestOrder.Id).ToList();
             var requestDtoList = new List<RequestDto>(); 
 
             foreach (var item in requests)
@@ -78,6 +78,7 @@ namespace CovidCommunity.Api.requestOrder
             return new RequestOrderDto
             {
                 Id = requestOrder.Id,
+                IsActive = requestOrder.IsActive,
                 OrderRequestedByUserId = requestOrder.OrderRequestedByUserId,
                 Requests = requestDtoList,
                 CreatedDate = requestOrder.CreatedDate,

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CovidCommunity.Api.Controllers;
+using CovidCommunity.Api.Item;
+using CovidCommunity.Api.Item.Dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CovidCommunity.Api.Web.Host.Controllers
@@ -11,17 +13,17 @@ namespace CovidCommunity.Api.Web.Host.Controllers
     [ApiController]
     public class ItemController: ApiControllerBase
     {
-        [HttpPost("requestItem")]
-        public async void RequestItem()
-        {
+        private readonly IItemService _itemService;
 
+        public ItemController(IItemService itemService)
+        {
+            _itemService = itemService;
         }
 
-        [HttpPost("donateItem")]
-        public async void DonateItem()
+        [HttpGet("getItemsByLocation")]
+        public List<LocationItemDto> RequestItem(int locationId)
         {
-
+           return _itemService.GetItemsByLocation(locationId);
         }
-
     }
 }

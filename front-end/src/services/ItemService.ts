@@ -1,19 +1,10 @@
 import axios from "axios";
 
 export default class ItemService {
-    public GetAllItems(): any {
-        return null;
-    }
 
-    public RequestItem(itemId: any, locationId: any): void {
-        
-    }
-
-    public DonateItem(itemId: any, locationId: any): void {
-
-    }
-
-    public FulfillItemRequest(userId: any, itemId:any, locationId: any): any {
-        return null;
+    public GetItemsByLocation(locationId: number): any {
+        return axios.get(`http://localhost:21021/api/Item/getItemsByLocation?locationId=${locationId}`).then(response => {
+            return response;
+        });
     }
 }

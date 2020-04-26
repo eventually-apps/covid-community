@@ -11,6 +11,6 @@ namespace CovidCommunity.Api.Item
 {
     public interface IItemService
     {
-        List<InventoryByLocation> GetItemsByLocation(int locationId);
+        List<LocationItemDto> GetItemsByLocation(int locationId);
     }
 }

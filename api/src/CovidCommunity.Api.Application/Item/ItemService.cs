@@ -21,9 +21,27 @@ namespace CovidCommunity.Api.Item
             _inventoryByLocationRepo = inventoryByLocationRepo;
         }
 
-        public List<InventoryByLocation> GetItemsByLocation(int locationId)
+        public List<LocationItemDto> GetItemsByLocation(int locationId)
         {
-            return null;
+            var items = _inventoryByLocationRepo.GetAll().Where(x => x.LocationId == locationId).ToList();
+            var itemNames = _itemRepo.GetAll();
+
+            var itemListDto = new List<LocationItemDto>();
+
+            foreach (var item in items)
+            {
+                var itemName = itemNames.FirstOrDefault(x => x.Id == item.ItemId)?.ItemName ?? "N/A";
+
+                itemListDto.Add(new LocationItemDto
+                {
+                    ItemName = itemName,
+                    ItemByLocationQuantity = item.ItemByLocationQuantity,
+                    ItemId = item.ItemId,
+                    LocationId = item.LocationId
+                });
+            }
+
+            return itemListDto;
         }
     }
 }
