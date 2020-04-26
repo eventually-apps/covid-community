@@ -16,8 +16,7 @@ export default class UserService {
             userNameOrEmailAddress: userName,
             password: password
         };
-
-        console.log("Ayoka sucks", loginModel);
+        
         return axios.post("http://localhost:21021/api/Auth", loginModel).then(response => {
             return response.data.result;
         });

@@ -8,12 +8,7 @@ export default class RequestService {
     }
 
     public CreateRequest(requestOrderId: number, request: any): any {
-        const params = {
-            RequestOrderId: requestOrderId,
-            Request: request
-        };
-
-        return axios.post("http://localhost:21021/api/RequestOrder/createRequest", params).then(response => {
+        return axios.post(`http://localhost:21021/api/RequestOrder/createRequest?requestOrderId=${requestOrderId}`, request).then(response => {
             return response.data.result;
         });
     }

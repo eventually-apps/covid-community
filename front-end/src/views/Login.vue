@@ -44,7 +44,6 @@ export default class Login extends Vue {
     let response: any;
     
     try {
-      console.log("chad needs a haircut");
       response = await userSerivce.Login(this.username, this.password);
       const userId = response.userId;
       setToken(response.accessToken);

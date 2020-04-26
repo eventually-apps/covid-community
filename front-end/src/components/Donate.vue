@@ -13,10 +13,10 @@
                         <v-img height="50px"></v-img>
                         <v-card-subtitle>{{ item.itemName }}</v-card-subtitle>
                         <v-card-text>
-                             <v-text-field label="Amount" name="Amount" type="number" />
+                             <v-text-field v-model="requestAmount" label="Amount" name="Amount" type="number" />
                         </v-card-text>
                          <v-card-actions>
-                            <v-btn color="green" text :disabled="item.itemByLocationQuantity === 0">Request</v-btn>
+                            <v-btn color="green" text :disabled="item.itemByLocationQuantity === 0" @click="CreateRequest({requestedItemId: item.itemId, requestedAmount: requestAmount})">Request</v-btn>
                             <v-btn color="blue" text>Donate</v-btn>
                         </v-card-actions>
                     </v-card>
@@ -41,8 +41,17 @@ const requestSerivce = new RequestService();
 export default class Donate extends Vue {
     @Prop() public orderRequests!: any;
 
-    // public CreateRequest(orderId: number, request: any){
+    public requestAmount = 0;
+    public orderId = 0;
 
-    // }
+    created(){
+        this.orderId = this.orderRequests.requestOrder.id;
+    }
+
+    public CreateRequest(request: any): any{
+        return requestSerivce.CreateRequest(this.orderId, request).then(res => {
+            console.log(res);
+        });
+    }
 }
 </script>
